@@ -310,7 +310,7 @@ Branch protection og status sjekker - Beskriv hva sensor må gjøre for å konfi
 at
 
 * [x] Ingen kan pushe kode direkte på main branch
-  * Repo settings -> Branches -> Add rule -> Branch name pattern: main -> Require a pull request before merging
+  * Repo settings -> Branches -> Add rule -> Branch name "master" -> Require a pull request before merging
 * [ ] Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
 * [ ] Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
 
