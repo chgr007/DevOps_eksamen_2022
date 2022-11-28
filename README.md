@@ -295,6 +295,8 @@ ha et valg som heter "Run workflow"
 
 * Start med å få workflowen til å kjøre når det lages en pull request, og på hver push til main branch
 
+* [x] OK
+
 ### Oppgave 2 
 
 Det er andre utfordringer med denne flyten også; Workflowen kjører "ok" selv om det åpenbart er unit-testfeil i koden. 
