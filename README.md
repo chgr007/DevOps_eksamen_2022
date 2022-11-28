@@ -319,7 +319,7 @@ at
 * [x] Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
   * Legge til `Require status checks to pass before merging` + søke etter `build` i steget over
 
-### notes: ser ut til at jeg kan gjøre alle disse oppgavene i GitHub. Har studentkonto der, så er sikkert litt mer man kan gjøre enn i free tier
+### notes: ser ut til at jeg kan gjøre alle disse oppgavene i GitHub. Har studentkonto der, så er sikkert litt mer man kan gjøre enn i free tier. Droppet require approvals i repoet så jeg kan merge
 
 ## Del 3 - Docker
 
@@ -331,8 +331,10 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
 * [x] Lage token i dockerhub
-* [x] Legge til token i secrets i repoet
+* [x] Legge til token og brukernavn i secrets i repoet
 * [x] Endre branch fra main til master i workflow
+
+### Notes: Denne kjører ikke tester. Kanskje slå de på etterhvert
 
 ### Oppgave 2
 
@@ -364,8 +366,8 @@ Konsulentene ga opp, og hoppet som vanlig over på en annen oppgave. Så for øy
 
 Vi kan få bedre kontroll på byggeprosessen ved også å gjøre maven bygget i en container. For å unngå lignende problemer i fremtiden ønsker vi derfor å bruke Docker til kompilere- og bygge koden.
 
-* Skriv om Dockerfilen. til bruke en *Multi Stage Build*. 
-* Du må også rydde opp i ```docker.yml``` workflow filen... Fjern ønødvendige "steps".
+* [ ] Skriv om Dockerfilen. til bruke en *Multi Stage Build*. 
+* [ ] Du må også rydde opp i ```docker.yml``` workflow filen... Fjern ønødvendige "steps".
 
 ### Oppave 3
 
