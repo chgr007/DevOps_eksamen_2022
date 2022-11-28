@@ -293,17 +293,16 @@ ha et valg som heter "Run workflow"
 
 ### Oppgave 1 
 
-* Start med å få workflowen til å kjøre når det lages en pull request, og på hver push til main branch
+* [x] Start med å få workflowen til å kjøre når det lages en pull request, og på hver push til main branch
 
-* [x] OK
 
 ### Oppgave 2 
 
 Det er andre utfordringer med denne flyten også; Workflowen kjører "ok" selv om det åpenbart er unit-testfeil i koden. 
 
-* Få først ```ci.yml```workflow til å feile fordi enhetstesten feiler. 
-* Rett deretter enhetstesten og se at pipeline kjører "ok".  
-* Workflowen skal kompilere javakoden og kjøre enhetstester på hver eneste push, *uavhengig av branch* 
+* [x] Få først ```ci.yml```workflow til å feile fordi enhetstesten feiler. 
+* [x] Rett deretter enhetstesten og se at pipeline kjører "ok".  
+* [x] Workflowen skal kompilere javakoden og kjøre enhetstester på hver eneste push, *uavhengig av branch* 
 
 ### Oppgave 3 
 

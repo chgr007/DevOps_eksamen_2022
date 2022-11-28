@@ -4,7 +4,7 @@
 name: CI pipeline
 on:
   push:
-    branches: [ main, master ]
+    branches: [ '*' ]
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5 # Kan være greit å ha en timeout
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
