@@ -314,9 +314,12 @@ at
     * `Require a pull request before merging `
     * `Require status check to pass before merging`
     * `Do not allow bypassing the above settings`
-* [ ] Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
-* [ ] Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
+* [x] Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
+  * Legge til `Require approvals` + velge antallet, altså minst 1, i steget over
+* [x] Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
+  * Legge til `Require status checks to pass before merging` + søke etter `build` i steget over
 
+### notes: ser ut til at jeg kan gjøre alle disse oppgavene i GitHub. Har studentkonto der, så er sikkert litt mer man kan gjøre enn i free tier
 ## Del 3 - Docker
 
 Applikasjonen er laget for å pushe et container image til Docker Hub. 
