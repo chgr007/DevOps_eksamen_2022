@@ -320,6 +320,7 @@ at
   * Legge til `Require status checks to pass before merging` + søke etter `build` i steget over
 
 ### notes: ser ut til at jeg kan gjøre alle disse oppgavene i GitHub. Har studentkonto der, så er sikkert litt mer man kan gjøre enn i free tier
+
 ## Del 3 - Docker
 
 Applikasjonen er laget for å pushe et container image til Docker Hub. 
@@ -329,6 +330,9 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 ### Oppgave 1
 
 Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
+* [x] Lage token i dockerhub
+* [x] Legge til token i secrets i repoet
+* [x] Endre branch fra main til master i workflow
 
 ### Oppgave 2
 
