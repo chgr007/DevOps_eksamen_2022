@@ -1,8 +1,9 @@
 # Jim; I'm giving up on this docker thing. It just fails ,and I've spent about six weeks on this...
 name: Docker build
 on:
-  push:
-    branches: [ master ]
+#  commented out since the repo doesn't allow direct pushes to master. Uncomment if this changes.
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
