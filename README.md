@@ -366,18 +366,18 @@ Konsulentene ga opp, og hoppet som vanlig over på en annen oppgave. Så for øy
 
 Vi kan få bedre kontroll på byggeprosessen ved også å gjøre maven bygget i en container. For å unngå lignende problemer i fremtiden ønsker vi derfor å bruke Docker til kompilere- og bygge koden.
 
-* [ ] Skriv om Dockerfilen. til bruke en *Multi Stage Build*. 
-* [ ] Du må også rydde opp i ```docker.yml``` workflow filen... Fjern ønødvendige "steps".
+* [x] Skriv om Dockerfilen. til bruke en *Multi Stage Build*. 
+* [x] Du må også rydde opp i ```docker.yml``` workflow filen... Fjern ønødvendige "steps".
 
 ### Oppave 3
 
 Gaffel consulting var ikke klar over at det var en dårlig idè å ha sitt container image i et offentlig Docker hub repository - og Shopifly har allerede sett at flere hundre har lastet ned deres container image.
 Et privat ECR repository i AWS er en bedre løsning.
 
-* Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
-* Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
-* Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
-* Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
+* [x] Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
+* [ ] Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
+* [ ] Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
+* [ ] Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
 
 ## Del 4 - Metrics, overvåkning og alarmer
 
