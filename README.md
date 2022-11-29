@@ -391,7 +391,7 @@ Cloud9 er ikke verdens beste IDE. Det anbefales å gjøre den følgende oppgaven
 
 ### Oppgave 1
 
-Gjør nødvendige endringer i ```pom.xml``` - og koden, slik at applikasjonen kan levere Metrics til CloudWatch ved hjelp av Spring Boot Micrometer.
+* [x] Gjør nødvendige endringer i ```pom.xml``` - og koden, slik at applikasjonen kan levere Metrics til CloudWatch ved hjelp av Spring Boot Micrometer.
 Konfigurer applikasjonen til å bruke ditt eget ClodWatch Metrics Namespace - ditt Kandidatnummer. 
 
 *OBS!* Når dere innfører Micrometer i koden deres, vil enhetstesten slutte å fungere. Dere får lov til å slette 
@@ -402,10 +402,10 @@ til å "mocke" micrometer fra enhetstestene, men det er ikke ønskelig at dere s
 
 Endre Javakoden slik at den rapporterer følgende Metrics til CloudWatch
 
-* "carts" -  Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.  
-* "cartsvalue" - Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
-* "checkouts" - Totalt antall  handlevogner er blitt sjekket ut
-* "checkout_latency" - Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
+* [x] "carts" - Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.  
+* [x] "cartsvalue" - Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
+* [x] "checkouts" - Totalt antall  handlevogner er blitt sjekket ut
+* [x] "checkout_latency" - Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
 
 ## Del 5 - Terraform og CloudWatch Dashboards
 
