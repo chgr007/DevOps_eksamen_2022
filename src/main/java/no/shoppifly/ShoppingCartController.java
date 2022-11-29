@@ -39,6 +39,8 @@ public class ShoppingCartController implements ApplicationListener<ApplicationRe
      *
      * @return an order ID
      */
+
+    // TODO: Sjekk ut hvordan Average blir regnet ut i AWS. Kan ikke se noe forskjell på å bruke .max og .avg med Average som metrikk. Uhm.
     @Timed(value = "checkout_t")
     @PostMapping(path = "/cart/checkout")
     public String checkout(@RequestBody Cart cart) {
