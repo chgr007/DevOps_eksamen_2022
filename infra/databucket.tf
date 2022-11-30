@@ -8,8 +8,8 @@ terraform {
 }
 
 # Er det fordi det ikke er noen state fil i github actions?
+# Kan også være fordi init kjører hver gang i workflow?
 resource "aws_s3_bucket" "analyticsbucket" {
   bucket = "analytics-${var.candidate_id}"
 }
 
-# Trigger change
