@@ -375,9 +375,13 @@ Gaffel consulting var ikke klar over at det var en dårlig idè å ha sitt conta
 Et privat ECR repository i AWS er en bedre løsning.
 
 * [x] Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
-* [ ] Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
-* [ ] Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
-* [ ] Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
+* [x] Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
+* [x] Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
+  * Lag access token i AWS IAM.
+  * Legg denne inn i github-repoets secrets med identifikatorene `AWS_ACCESS_KEY_ID` og `AWS_SECRET_ACCESS_KEY`
+  * Opprett et ECR repository i AWS
+  * Endre `1012` til ECR repo-navnet på linje 43 og 44 i docker.yml 
+* [x] Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
 
 ## Del 4 - Metrics, overvåkning og alarmer
 
@@ -387,7 +391,7 @@ Cloud9 er ikke verdens beste IDE. Det anbefales å gjøre den følgende oppgaven
 
 ### Oppgave 1
 
-Gjør nødvendige endringer i ```pom.xml``` - og koden, slik at applikasjonen kan levere Metrics til CloudWatch ved hjelp av Spring Boot Micrometer.
+* [x] Gjør nødvendige endringer i ```pom.xml``` - og koden, slik at applikasjonen kan levere Metrics til CloudWatch ved hjelp av Spring Boot Micrometer.
 Konfigurer applikasjonen til å bruke ditt eget ClodWatch Metrics Namespace - ditt Kandidatnummer. 
 
 *OBS!* Når dere innfører Micrometer i koden deres, vil enhetstesten slutte å fungere. Dere får lov til å slette 
@@ -398,10 +402,10 @@ til å "mocke" micrometer fra enhetstestene, men det er ikke ønskelig at dere s
 
 Endre Javakoden slik at den rapporterer følgende Metrics til CloudWatch
 
-* "carts" -  Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.  
-* "cartsvalue" - Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
-* "checkouts" - Totalt antall  handlevogner er blitt sjekket ut
-* "checkout_latency" - Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
+* [x] "carts" - Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.  
+* [x] "cartsvalue" - Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
+* [x] "checkouts" - Totalt antall  handlevogner er blitt sjekket ut
+* [x] "checkout_latency" - Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
 
 ## Del 5 - Terraform og CloudWatch Dashboards
 
@@ -420,7 +424,7 @@ De kommenterte derfor bare ut S3 bucket koden, og gikk videre til neste oppgave.
 
 Se på ```provider.tf filen```. 
 
-* Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
+* [ ] Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
 * Gjør nødvendige Endre slik denne slik at Terraform kan kjøres flere ganger uten å forsøke å opprette ressurser hver gang den kjører.
 * Fjern kommentarene fra ```databacket.tf``` slik at Terraform-koden  også lager en S3 bucket. 
 
