@@ -276,6 +276,15 @@ Beskriv med egne ord;
 
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse
   disse? Hvilke DevOps prinsipper blir brutt?
+Når de jobber med vannfall-leveranser vil brukere måtte vente lenger på funksjonalitet (begrens oppgavestørelsen (Flyt))
+Kan ikke fikse bugs "on the fly", vanskeligere å oppdage og rette de
+Psykologisk mer motiverende å jobbe med små oppgaver og bli ferdig med de
+Flyt og små leveranser sørger for at justeringer og forbedringer enklere kan innføres. Lettere å fikse på små ting etterhvert som de rulles ut, enn når man leverer
+en massiv oppdatering. Produkteier også mer fornøyd 
+Det kan bli vanskelig for utviklerne å holde oversikt over alle endringer som blir gjort i koden, større sjanse for merge conflicts når det går lang tid fra forskjellige
+utviklere brancher og merger. 
+Stopp, analyser og fiks problemet. Ikke workaround (feedback)
+
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
   * "Feedback" - Kvalitet skal oppstå ved kilden. Utvikleren skal skrive god kode, man skal ikke trenge å ansette masse testere og Q&A for å oppdage feil når utvikleren kan trenes opp for å løse problemet ved rota.
   * "Flyt" - waste, i stedet for å løse problemet gjør man work arounds for å fikse det.
@@ -288,6 +297,7 @@ Beskriv med egne ord;
     * Tester i CI/CD pipeline
     * Swarming - alle løper til for å hjelpe hvis noe skulle skje
 
+Dev overleverer til ops. Færrest mulig overleveringer (Flyt)
 ## Del 2 - CI
 
 Konsulentene som har jobbet med innføring av DevOps har startet på en GitHub actions workflow for kontinuerlig
