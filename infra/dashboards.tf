@@ -6,25 +6,6 @@ resource "aws_cloudwatch_dashboard" "main" {
   "widgets": [
     {
       "type": "metric",
-      "x": 0,
-      "y": 0,
-      "width": 12,
-      "height": 6,
-      "properties": {
-        "metrics": [
-          [
-            "${var.candidate_id}",
-            "account_count.value"
-          ]
-        ],
-        "period": 60,
-        "stat": "Maximum",
-        "region": "eu-west-1",
-        "title": "Total number of accounts"
-      }
-    },
-    {
-      "type": "metric",
       "x": 13,
       "y": 0,
       "width": 12,
