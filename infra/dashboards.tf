@@ -88,11 +88,11 @@ resource "aws_cloudwatch_dashboard" "main" {
       "height": 6,
       "properties": {
         "metrics": [
-          ["${var.candidate_id}", "checkout_t.avg", "exception", "None", "method", "POST", "uri", "/cart/checkout", "outcome", "SUCCESS", "status", "200" ]
+          ["${var.candidate_id}", "checkout_t.max", "exception", "None", "method", "POST", "uri", "/cart/checkout", "outcome", "SUCCESS", "status", "200" ]
         ],
         "view": "timeSeries",
         "period": 60,
-        "stat": "Maximum",
+        "stat": "Average",
         "region": "eu-west-1",
         "title": "Average time of checkout request"
       }
