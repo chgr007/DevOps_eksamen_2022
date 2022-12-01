@@ -6,7 +6,7 @@ resource "aws_cloudwatch_dashboard" "main" {
   "widgets": [
     {
       "type": "metric",
-      "x": 13,
+      "x": 0,
       "y": 0,
       "width": 12,
       "height": 6,
@@ -25,8 +25,8 @@ resource "aws_cloudwatch_dashboard" "main" {
     },
     {
       "type": "metric",
-      "x": 0,
-      "y": 7,
+      "x": 13,
+      "y": 0,
       "width": 12,
       "height": 6,
       "properties": {
@@ -44,7 +44,7 @@ resource "aws_cloudwatch_dashboard" "main" {
     },
     {
       "type": "metric",
-      "x": 13,
+      "x": 0,
       "y": 7,
       "width": 12,
       "height": 6,
@@ -63,8 +63,8 @@ resource "aws_cloudwatch_dashboard" "main" {
     },
     {
       "type": "metric",
-      "x": 0,
-      "y": 14,
+      "x": 13,
+      "y": 7,
       "width": 12,
       "height": 6,
       "properties": {
