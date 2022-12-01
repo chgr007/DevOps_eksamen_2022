@@ -1,10 +1,12 @@
 package no.shoppifly;
 
+import io.micrometer.core.annotation.Timed;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 @Component
+@Timed("cart")
 class NaiveCartImpl implements CartService {
 
     private final Map<String, Cart> shoppingCarts = new HashMap<>();
