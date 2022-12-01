@@ -277,9 +277,16 @@ Beskriv med egne ord;
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse
   disse? Hvilke DevOps prinsipper blir brutt?
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
+  * "Feedback" - Kvalitet skal oppstå ved kilden. Utvikleren skal skrive god kode, man skal ikke trenge å ansette masse testere og Q&A for å oppdage feil når utvikleren kan trenes opp for å løse problemet ved rota.
+  * "Flyt" - waste, i stedet for å løse problemet gjør man work arounds for å fikse det.
 * Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling? 
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
+  * "Feedback"
+    * overvåkning av applikasjonens tilstand
+  * "Flyt"
+    * Tester i CI/CD pipeline
+    * Swarming - alle løper til for å hjelpe hvis noe skulle skje
 
 ## Del 2 - CI
 
@@ -425,9 +432,8 @@ De kommenterte derfor bare ut S3 bucket koden, og gikk videre til neste oppgave.
 Se på ```provider.tf filen```. 
 
 * [x] Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
-  * Terraform hadde ikke en state-fil å referere til i Github Actions, da en backend ikke var definert.
-    Terraform forsøkte derfor å opprette en ny bucket hver gang den kjørte. S3 buckets krever unike navn og overskriver ikke de som allerede
-    ligger i S3. 
+  * Terraform hadde ikke en state-fil å referere til i Github Actions, da en backend ikke var definert og den lokale state filen ikke vil eksistere etter endt kjøring i Actions.
+    Terraform forsøkte derfor å opprette en ny bucket hver gang GH Actions kjørte. 
 * [x] Gjør nødvendige Endre slik denne slik at Terraform kan kjøres flere ganger uten å forsøke å opprette ressurser hver gang den kjører.
   * Opprettet state bucket i backend.terraform
 * [x] Fjern kommentarene fra ```databacket.tf``` slik at Terraform-koden også lager en S3 bucket. 
