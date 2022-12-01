@@ -437,20 +437,20 @@ Se på ```provider.tf filen```.
 Et annet problem er at "terraform apply" bare blir kjørt hver gang noen lager en Pull request. Vi ønsker bare å kjøre apply når
 noen gjør en push mot main branch. 
 
-Fullfør workflow filen ```cloudwatch_dashboard.yml``` filen slik at apply bare bli kjørt på push mot main branch, og terraform plan   
+* [x] Fullfør workflow filen ```cloudwatch_dashboard.yml``` filen slik at apply bare bli kjørt på push mot main branch, og terraform plan   
 på når det lages en Pull request 
 
 ### Oppgave 3
 
 * Fullfør cloudwatch_dashboard.tf slik at koden lager et CloudWatch Dashboard med *fire widgets*. Disse skal vise metrikkene fra oppgave 2, Del 4. 
-* Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
-* Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
-* Totalt antall  handlevogner er blitt "sjekket ut" per time
-* Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
+  * [x] Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
+  * [x] Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
+  * [x] Totalt antall  handlevogner er blitt "sjekket ut" per time
+  * [ ] Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
 
 ### Alarmer
 
 Lag Terraform-kode som oppretter
 
-* En CloudWatch Alarm  som løses ut dersom antall handlekurver over tre repeternde perioder,på fem minutter, overstiger verdien 5
-* Alarmen skal sendes som e-post til en addresse som gis i workflow filen ```cloudwatch_dashboard.yml``` 
+* [x] En CloudWatch Alarm som løses ut dersom antall handlekurver over tre repeternde perioder, på fem minutter, overstiger verdien 5
+* [x] Alarmen skal sendes som e-post til en addresse som gis i workflow filen ```cloudwatch_dashboard.yml``` 

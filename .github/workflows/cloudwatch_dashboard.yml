@@ -18,7 +18,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: eu-west-1
       CANDIDATE_ID: 1012
-      CANDIDATE_EMAIL: 1012@gmail.com
+      CANDIDATE_EMAIL: chgr007@student.kristiania.no
     steps:
       - uses: actions/checkout@v3
       - name: Setup Terraform
@@ -33,11 +33,6 @@ jobs:
         if: github.event_name == 'pull_request'
         run: terraform plan  -var="candidate_id=$CANDIDATE_ID" -var="candidate_email=CANDIDATE_EMAIL" -no-color
         continue-on-error: false
-
-#      - name: Terraform Plan Status
-#        if: steps.plan.outcome == 'failure'
-#        run: exit 1
-
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
