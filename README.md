@@ -453,7 +453,6 @@ på når det lages en Pull request
   * [x] Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
   * [x] Totalt antall  handlevogner er blitt "sjekket ut" per time
   * [x] Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
-    * Her har jeg tatt en antakelse om hva som er mest nyttig: Micrometer rapporterer inn verdier hvert 5 sekund, og jeg benytter gjennomsnittet av maks-verdien disse fem sekundene i dashboardet. Jeg kunne også laget dashboard for gjennomsnittet av den laveste verdien de siste 5 sekundene, eller gjennomsnittet av gjennomsnittet de siste 5 sekundene. Når man måler responstid på denne måten ville jeg selv vært mest interessert i å vite gjennomsnittet av de høyeste rapporterte verdiene
 
 ### Alarmer
 
