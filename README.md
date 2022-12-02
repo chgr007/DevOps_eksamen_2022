@@ -288,7 +288,15 @@ Stopp, analyser og fiks problemet. Ikke workaround (feedback)
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
   * "Feedback" - Kvalitet skal oppstå ved kilden. Utvikleren skal skrive god kode, man skal ikke trenge å ansette masse testere og Q&A for å oppdage feil når utvikleren kan trenes opp for å løse problemet ved rota.
   * "Flyt" - waste, i stedet for å løse problemet gjør man work arounds for å fikse det.
+  * Stopp, analyser og fiks problemet. Ikke workaround (feedback)
+  * Bruke CD, tester og feature toggles for å sikre seg. 
+  * blue/green deployment
+  * CI, branch protection.
+  * CI, trunk based dev. eller gitflow. Sørger for en fungerende main branch.
 * Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling? 
+  * Man får mindre tilknytning til problemene som oppstår dersom man ikke har direkte ansvar for drift. "Stakes in the game"
+  * Tar lengre tid å fikse problemer da det er flere ledd som skal oppdage og rapportere videre når man har egen Ops avd.
+  * Waste med manuell deployment da det er mange manuelle oppgaver som tar tid (Hente jar fra ftp, laste opp til AWS etc.) 
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
   * "Feedback"
