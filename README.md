@@ -275,18 +275,20 @@ curl --location --request GET 'http://localhost:8080/carts' \
 Beskriv med egne ord;
 
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse
-  disse? Hvilke DevOps prinsipper blir brutt?
+
+`Når de leverer vannfall-leveranser bryter det med flere prinsipper i DevOps og agile, som nesten er en forutsetning for at DevOps skal kunne fungere. Dette fordi agile/smidig sørger for små og hyppige leveranser, og kan således legge til rette for en CI/CD pipeline. Mangelen på CI og CD umuliggjør mestparten av DevOps-prinsippene. Produkteier vil måtte vente lenge fra funksjonalitet blir forespurt, til den blir levert. Arbeidet blir derfor ikke gjort synlig, samtidig som det er mye «WIP» til enhver tid som fører til at endringer underveis blir vanskelige å gjennomføre. Feilretting vil ta lengre tid, da det er mer kode involvert i en leveranse. Prosesser i DevOps vil kvalitetssikre leveransene ved automatiserte tester og «fail fast»-prinsippet. «Environment parity» som vil si et likt miljø under testing og produksjon er også enklere å sørge for, når prosessene er automatiserte. Nå har de ikke «fail fast» og de har en høy MTTR. Dersom de oppdaget problemene i en tidlig fase, kunne de også rettet de raskere. Ved å innføre DevOps og endre arbeidsmåten sin vil bedriften oppleve høyere produktivitet, produkteier får bedre oversikt og kan lettere be om endringer underveis, og deployment vil bli mye mer forutsigbart. `
+
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
-  * "Feedback" - Kvalitet skal oppstå ved kilden. Utvikleren skal skrive god kode, man skal ikke trenge å ansette masse testere og Q&A for å oppdage feil når utvikleren kan trenes opp for å løse problemet ved rota.
-  * "Flyt" - waste, i stedet for å løse problemet gjør man work arounds for å fikse det.
+
+`De bryter med prinsippet om at kvalitet skal oppstå ved kilden. Dersom de stoppet, analyserte og fikset problemet i stedet, ville de fått fordelene som hyppige leveranser og kontinuerlig integrasjon gir. Antakeligvis burde de brutt opp oppgavene i enda mindre biter, for å få mindre problemer når de gjør hyppig release av ny funksjonalitet. De kunne også benyttet feature toggles, green/blue deployment og/eller canary deployment for å beskytte seg mot feil i release. `
 * Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling? 
-* Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
-  eller fjerne risiko ved hyppige leveraner.
-  * "Feedback"
-    * overvåkning av applikasjonens tilstand
-  * "Flyt"
-    * Tester i CI/CD pipeline
-    * Swarming - alle løper til for å hjelpe hvis noe skulle skje
+
+`Man får mindre tilknytning til problemene som oppstår dersom man ikke har direkte ansvar for deployment og drift. Nedbetaling av teknisk gjeld vil gå treger/stanse helt, dersom man ikke lenger har noe forhold til gjelden. Når man benytter DevOps har utviklerne "Skin in the game", og vil løse problemene som oppstår og sørge for at de ikke oppstår flere ganger. Dette fører også til lavere risikooverføring. Dagens modell gir flere overleveringer, som fører til waste. Det blir også flere overleveringer av problemer som må rettes i motsatt ende, da ops må gå til dev.
+  Waste følger også med manuell deployment, da det er mange manuelle oppgaver som tar tid (Hente jar fra ftp, laste opp til AWS etc.). Dette gir mange ledd som kan føre til feil, som kunne vært oppdaget ved automatiske prosesser og «bygg en gang». «Environment parity» vil også være vanskeligere å sørge for da det fort kan bli «mange kokker, mye søl». Kan ops ta for gitt at utvikleren ikke har gjort noe i sitt miljø siden sist overlevering. Sier devs alltid ifra?
+  `
+* Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere eller fjerne risiko ved hyppige leveraner.
+
+`Det kan oppstå utfordringer med merge conflicts, noe som kan løses ved å bruke trunk based development eller git flow, som er rammeverk for hvordan man sjekker ut og inn kode. Mange leveranser kan også føre til mange feil, heldigvis er det også lettere å rette små blokker med kode i kontrast til store leveranser. Feature toggles, green/blue deployment, canary deployment kan også benyttes for å redusere risiko ved hyppige leveranser. Branch protection og tester i CI/CD-pipeline kan også redusere faren for at bugs i det hele tatt havner i main/master-branchen. Dersom feil skulle oppstå, kan bedriften også velge å bruke swarming. Dette vil si at det blir alle mann på dekk for å løse problemene når de oppstår. For å kvalitetssikre koden som blir skrevet kan man også benytte parprogrammering, selv om man kan argumentere for at dette kan bli en form for waste, spesielt dersom det er snakk om erfarne utviklere. Man bør også bruke alarmer på ulike metrikker. Dette kan være alt fra om applikasjonen kræsjer, CPU load, minnebruk etc. `
 
 ## Del 2 - CI
 
@@ -453,7 +455,6 @@ på når det lages en Pull request
   * [x] Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
   * [x] Totalt antall  handlevogner er blitt "sjekket ut" per time
   * [x] Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
-    * Her har jeg tatt en antakelse om hva som er mest nyttig: Micrometer rapporterer inn verdier hvert 5 sekund, og jeg benytter gjennomsnittet av maks-verdien disse fem sekundene i dashboardet. Jeg kunne også laget dashboard for gjennomsnittet av den laveste verdien de siste 5 sekundene, eller gjennomsnittet av gjennomsnittet de siste 5 sekundene. Når man måler responstid på denne måten ville jeg selv vært mest interessert i å vite gjennomsnittet av de høyeste rapporterte verdiene
 
 ### Alarmer
 
