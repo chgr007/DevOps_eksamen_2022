@@ -9,18 +9,15 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController()
 public class ShoppingCartController implements ApplicationListener<ApplicationReadyEvent> {
     private MeterRegistry meterRegistry;
-    //private AtomicInteger numberOfCarts;
     private final CartService cartService;
     @Autowired
     public ShoppingCartController(MeterRegistry meterRegistry, CartService cartService) {
         this.meterRegistry = meterRegistry;
         this.cartService = cartService;
-        //this.numberOfCarts = meterRegistry.gauge("cart_count", new AtomicInteger(0));
     }
 
 
@@ -71,7 +68,7 @@ public class ShoppingCartController implements ApplicationListener<ApplicationRe
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         // Count of all carts at a given time
-        Gauge.builder("cart_count", cartService, c -> c.getAllsCarts().size()).register(meterRegistry);
+        Gauge.builder("cart_count", cartService, cs -> cs.getAllsCarts().size()).register(meterRegistry);
         // summerize total in all carts
         Gauge.builder("carts_sum", cartService, CartService::total).register(meterRegistry);
     }
